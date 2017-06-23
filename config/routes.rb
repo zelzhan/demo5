@@ -11,6 +11,10 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'home#index'
-
+  resources :products
+  resources :order_items
+  resources :home
+  resources :carts
+  
 
 end

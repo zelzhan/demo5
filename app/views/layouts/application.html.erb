@@ -10,9 +10,19 @@
   </head>
 
   <body>
-    
-    <%= render 'layouts/header' %>
 
-    <%= yield %>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+          <h1><%= link_to "", root_path %></h1>
+        </div>
+        <div class="col-xs-6 text-right">
+          <h1 class="cart-text"><%= render 'layouts/subtotal_button' %></h1>
+        </div>
+      </div>
+      <hr>
+      <%= yield %>
+    </div>
   </body>
 </html>
