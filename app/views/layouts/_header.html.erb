@@ -2,16 +2,13 @@
   <div class="container-fluid">
     <div class="navbar-header">
     <li>
-      <a class="navbar-brand" href="/">ChinaTown</a>
+      <%= link_to 'ChinaTown', root_path, class: 'navbar-brand' %>
     </li>
   </div>
 
   <ul class="nav navbar-nav">
-    <li class="active">
-      <a href="#">Home</a>
-    </li>
     <li>
-      <a href="#">Page 1</a>
+      <%= link_to "Shop", products_path %>
     </li>
     <li>
       <a href="#">Page 2</a>
