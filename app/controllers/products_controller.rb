@@ -12,7 +12,11 @@ before_action :set_product, only: [:show, :edit, :update, :destroy]
   end
 
   def new
+    if !current_user.try(:admin?)
+      redirect_to products_path
+    else
     @product = Product.new
+    end
   end
 
   def create
