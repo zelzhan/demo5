@@ -3,6 +3,7 @@ before_action :set_product, only: [:show, :edit, :update, :destroy]
 
 
 
+
   def index
     @products = Product.all
     @order_item = current_order.order_items.new
@@ -56,6 +57,7 @@ before_action :set_product, only: [:show, :edit, :update, :destroy]
   end
 
   private
+
 
   def set_product
     @product = Product.find(params[:id])

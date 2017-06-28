@@ -1,4 +1,6 @@
 class OrderItemsController < ApplicationController
+before_action :check_signed_in, only: [:create]
+
   def create
     @order = current_order
     @order_item = @order.order_items.new(order_item_params)
@@ -24,6 +26,10 @@ class OrderItemsController < ApplicationController
   private
   def order_item_params
     params.require(:order_item).permit(:quantity, :product_id)
+  end
+
+  def check_signed_in
+    redirect_to new_user_session_path unless signed_in?
   end
 
 end
